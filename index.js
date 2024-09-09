@@ -1,13 +1,13 @@
 import dotenv from 'dotenv';
 import express from 'express';
-import connectDB from './database/Connect.js';
+import dbConnection from "./database/dbConnect.js"
 import { corsMiddleware, jsonParser, urlEncodedParser } from './middlewares/Middleware.js';
 import NotesRouter from "./routes/NotesRoute.js"
 // Load environment variables
 dotenv.config();
 
 // Connect to MongoDB
-connectDB();
+dbConnection();
 
 const app = express();
 
