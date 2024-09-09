@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import dbConnection from "./database/dbConnect.js"
-import { corsMiddleware, jsonParser, urlEncodedParser } from './middlewares/Middleware.js';
+import { corsMiddleware, jsonParser, urlEncodedParser } from './middlewares/middleware.js';
 import NotesRouter from "./routes/NotesRoute.js"
 // Load environment variables
 dotenv.config();
