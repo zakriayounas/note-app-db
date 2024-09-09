@@ -1,5 +1,5 @@
 import express from 'express';
-import { addNewNote, getAllNotes, removeNote, updateNoteDetails, viewNoteDetails } from '../controllers/notesController.js';
+import { addNewNote, getAllNotes, removeNote, updateNoteDetails, viewNoteDetails } from '../controllers/NotesController.js';
 const NotesRoute = express.Router();
 NotesRoute.get('/', getAllNotes);
 NotesRoute.post('/add-new-note', addNewNote);
