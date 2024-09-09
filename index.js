@@ -1,8 +1,8 @@
 import dotenv from 'dotenv';
 import express from 'express';
-import connectDB from './database/connect.js';
-import { corsMiddleware, jsonParser, urlEncodedParser } from './middlewares/middleware.js';
-import NotesRoute from "./routes/notesRoute.js"
+import connectDB from './database/Connect.js';
+import { corsMiddleware, jsonParser, urlEncodedParser } from './middlewares/Middleware.js';
+import NotesRouter from "./routes/NotesRoute.js"
 // Load environment variables
 dotenv.config();
 
@@ -20,14 +20,14 @@ app.use(urlEncodedParser);
 // Use CORS middleware
 app.use(corsMiddleware);
 // Use routes
-app.use('/api/notes', NotesRoute);
+app.use('/api/notes', NotesRouter);
 // Home route
 app.get('/', (req, res) => {
     res.send('API is running...');
 });
 
 // Start the server
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 console.log(PORT);
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
